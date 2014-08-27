@@ -2,15 +2,15 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaBoolean extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaLongId extends TemplateDeTiposDeCampos{
 
-	public CriaSqlFieldParaBoolean(SqlFieldBuilder builder) {
+	public CriaSqlFieldParaLongId(SqlFieldBuilder builder) {
 		super(builder);
 	}
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType().equals(Boolean.class) || field.getType().getSimpleName().equals("boolean") )
+		if(field.getType().equals(Long.class) && field.getName().equals("id")) 
 			return true;
 		
 		return false;
@@ -22,9 +22,8 @@ public class CriaSqlFieldParaBoolean extends TemplateDeTiposDeCampos{
 		sb.append("  ");
 		sb.append(field.getName());
 		sb.append(" ");
-		sb.append("TINYINT(1) UNSIGNED DEFAULT \'0\',\r\n");
+		sb.append(" INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n");
 		return sb.toString();
 	}
-	
 
 }
