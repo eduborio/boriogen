@@ -10,14 +10,9 @@ public class CriaSqlFieldParaBoolean extends TemplateDeTiposDeCampos{
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType() != null) {
-			System.out.println(field.getType().getSimpleName());
-			if(field.getType().getSimpleName().equals("Boolean")) {
-				System.out.println("SIM Booleano");
-				return true;
-			}
-		}
-		System.out.println("Nao Booleano");
+		if(field.getType().getSimpleName().equals("boolean"))
+			return true;
+		
 		return false;
 	}
 

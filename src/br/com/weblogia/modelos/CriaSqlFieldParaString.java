@@ -10,12 +10,9 @@ public class CriaSqlFieldParaString extends TemplateDeTiposDeCampos{
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType() != null) {
-			System.out.println(field.getType().getSimpleName());
-			if(field.getType().getSimpleName().equals("String")) {
-				return true;
-			}
-		}
+		if(field.getType().getSimpleName().equals("String")) 
+			return true;
+		
 		return false;
 	}
 

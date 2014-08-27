@@ -6,11 +6,13 @@ public class CorrenteDeTipos {
 
 	SqlFieldBuilder string;
 	SqlFieldBuilder booleano;
+	SqlFieldBuilder semtipo;
 	private Field field;
 
 	public CorrenteDeTipos(Field field) {
 		this.field = field;
-		string = new CriaSqlFieldParaString(null);
+		semtipo  = new TipoNaoImplementado(null);
+		string   = new CriaSqlFieldParaString(semtipo);
 		booleano = new CriaSqlFieldParaBoolean(string);
 	}
 
