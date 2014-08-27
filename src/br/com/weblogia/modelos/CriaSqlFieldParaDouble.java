@@ -2,16 +2,15 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaDouble extends TemplateDeTiposDeCampos{
 
-	public CriaSqlFieldParaInteger(SqlFieldBuilder builder) {
+	public CriaSqlFieldParaDouble(SqlFieldBuilder builder) {
 		super(builder);
 	}
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType().equals(Integer.class) || field.getType().getSimpleName().equals("int") ||
-		   field.getType().equals(Long.class) || field.getType().getSimpleName().equals("long")	) 
+		if(field.getType().equals(Double.class) || field.getType().getSimpleName().equals("double")) 
 			return true;
 		
 		return false;
@@ -23,7 +22,7 @@ public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
 		sb.append("  ");
 		sb.append(field.getName());
 		sb.append(" ");
-		sb.append("INT(10) UNSIGNED DEFAULT 0,\r\n");
+		sb.append("DECIMAL(15,2) DEFAULT 0,\r\n");
 		return sb.toString();
 	}
 

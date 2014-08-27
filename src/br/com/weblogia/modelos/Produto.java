@@ -1,5 +1,7 @@
 package br.com.weblogia.modelos;
 
+import java.util.Date;
+
 public class Produto {
 	
 	private Long id;
@@ -8,6 +10,11 @@ public class Produto {
 	private Boolean emPromocao;
 	private int euSouInt;
 	private Integer euSouInteger;
+	private Date euSouDate;
+	private Double euSouDouble;
+	private double euSoudoublePrimitivo;
+	private Long  euSouLong;
+	private long  euSouLongPrimitivo;
 	
 	public Long getId() {
 		return id;
@@ -45,5 +52,38 @@ public class Produto {
 	public void setEuSouInteger(Integer euSouInteger) {
 		this.euSouInteger = euSouInteger;
 	}
+	public Date getEuSouDate() {
+		return euSouDate;
+	}
+	public void setEuSouDate(Date euSouDate) {
+		this.euSouDate = euSouDate;
+	}
+	public Double getEuSouDouble() {
+		return euSouDouble;
+	}
+	public void setEuSouDouble(Double euSouDouble) {
+		this.euSouDouble = euSouDouble;
+	}
+	public double getEuSoudoublePrimitivo() {
+		return euSoudoublePrimitivo;
+	}
+	public void setEuSoudoublePrimitivo(double euSoudoublePrimitivo) {
+		this.euSoudoublePrimitivo = euSoudoublePrimitivo;
+	}
+	public Long getEuSouLong() {
+		return euSouLong;
+	}
+	public void setEuSouLong(Long euSouLong) {
+		this.euSouLong = euSouLong;
+	}
+	public long getEuSouLongPrimitivo() {
+		return euSouLongPrimitivo;
+	}
+	public void setEuSouLongPrimitivo(long euSouLongPrimitivo) {
+		this.euSouLongPrimitivo = euSouLongPrimitivo;
+	}
+	
+	
+	
 
 }

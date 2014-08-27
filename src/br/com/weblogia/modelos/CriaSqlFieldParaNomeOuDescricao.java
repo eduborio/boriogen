@@ -2,16 +2,16 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaNomeOuDescricao extends TemplateDeTiposDeCampos{
 
-	public CriaSqlFieldParaInteger(SqlFieldBuilder builder) {
+	public CriaSqlFieldParaNomeOuDescricao(SqlFieldBuilder builder) {
 		super(builder);
 	}
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType().equals(Integer.class) || field.getType().getSimpleName().equals("int") ||
-		   field.getType().equals(Long.class) || field.getType().getSimpleName().equals("long")	) 
+		if(field.getType().equals(String.class) && 
+		  (field.getName().equals("nome") || field.getName().equals("descricao")) ) 
 			return true;
 		
 		return false;
@@ -23,7 +23,7 @@ public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
 		sb.append("  ");
 		sb.append(field.getName());
 		sb.append(" ");
-		sb.append("INT(10) UNSIGNED DEFAULT 0,\r\n");
+		sb.append("VARCHAR(65) NOT NULL,\r\n");
 		return sb.toString();
 	}
 

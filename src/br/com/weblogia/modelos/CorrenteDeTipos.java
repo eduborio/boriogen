@@ -9,6 +9,9 @@ public class CorrenteDeTipos {
 	SqlFieldBuilder booleano;
 	SqlFieldBuilder longId;
 	SqlFieldBuilder integer;
+	SqlFieldBuilder date;
+	SqlFieldBuilder nome;
+	SqlFieldBuilder doubles;
 	
 	private Field field;
 
@@ -19,10 +22,13 @@ public class CorrenteDeTipos {
 		booleano = new CriaSqlFieldParaBoolean(string);
 		integer = new CriaSqlFieldParaString(booleano);
 		longId = new CriaSqlFieldParaLongId(integer);
+		date = new CriaSqlFieldParaDate(longId);
+		nome = new CriaSqlFieldParaNomeOuDescricao(date);
+		doubles = new CriaSqlFieldParaDouble(nome);
 	}
 
 	public String addSqlField() {
-		return longId.criaCampoDeSql(field);
+		return doubles.criaCampoDeSql(field);
 	}
 	
 }

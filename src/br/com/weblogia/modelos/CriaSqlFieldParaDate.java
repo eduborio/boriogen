@@ -1,17 +1,17 @@
 package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
+import java.util.Date;
 
-public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaDate extends TemplateDeTiposDeCampos{
 
-	public CriaSqlFieldParaInteger(SqlFieldBuilder builder) {
+	public CriaSqlFieldParaDate(SqlFieldBuilder builder) {
 		super(builder);
 	}
 
 	@Override
 	public boolean ehDoTipoEsperado(Field field) {
-		if(field.getType().equals(Integer.class) || field.getType().getSimpleName().equals("int") ||
-		   field.getType().equals(Long.class) || field.getType().getSimpleName().equals("long")	) 
+		if(field.getType().equals(Date.class)) 
 			return true;
 		
 		return false;
@@ -23,7 +23,7 @@ public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
 		sb.append("  ");
 		sb.append(field.getName());
 		sb.append(" ");
-		sb.append("INT(10) UNSIGNED DEFAULT 0,\r\n");
+		sb.append(" DATETIME DEFAULT NULL,\r\n");
 		return sb.toString();
 	}
 

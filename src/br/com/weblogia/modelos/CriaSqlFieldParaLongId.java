@@ -22,7 +22,7 @@ public class CriaSqlFieldParaLongId extends TemplateDeTiposDeCampos{
 		sb.append("  ");
 		sb.append(field.getName());
 		sb.append(" ");
-		sb.append(" INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n");
+		sb.append("INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n");
 		return sb.toString();
 	}
 

@@ -16,7 +16,7 @@ public class TesteChainOfResposabilityParaSqlGenerator {
         
         for(Field field: clazz.getDeclaredFields()) {
         	chain = new CorrenteDeTipos(field);
-        	System.out.println(chain.addSqlField());
+        	System.out.print(chain.addSqlField());
         }
 		
 		
