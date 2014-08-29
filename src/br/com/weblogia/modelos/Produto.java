@@ -2,6 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 
 public class Produto {
@@ -19,6 +20,9 @@ public class Produto {
 	private long  euSouLongPrimitivo;
 	@ManyToOne
 	private Cliente cliente;
+	
+	@Column(name="usuario_maroto")
+	private String usuarioMaroto;
 	
 	private Endereco endereco;
 	

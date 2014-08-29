@@ -6,9 +6,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-public class CriaSqlIndexParaForeignKey extends TemplateDeIndex{
+public class CriaSqlConstraintParaForeignKey extends TemplateDeConstraint{
 
-	public CriaSqlIndexParaForeignKey(SqlIndexBuilder builder) {
+	public CriaSqlConstraintParaForeignKey(SqlConstraintBuilder builder) {
 		super(builder);
 	}
 
@@ -22,27 +22,29 @@ public class CriaSqlIndexParaForeignKey extends TemplateDeIndex{
 	}
 
 	@Override
-	public String costroiIndiceDeSql(Field field) {
+	public String costroiConstraintDeSql(Field field) {
 		
 		String fieldName = field.getName() + "_id";
 		if(field.isAnnotationPresent(JoinColumn.class)) 
 			fieldName = field.getAnnotation(JoinColumn.class).name();
 		
-		String classe = field.getDeclaringClass().getSimpleName();
+		String classe = field.getDeclaringClass().getSimpleName().toLowerCase();
 		
-		String references = field.getType().getSimpleName();
+		String references = field.getType().getSimpleName().toLowerCase();
 		if(field.getType().isAnnotationPresent(Table.class))
 			references = field.getAnnotation(Table.class).name();
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("  ");
-		sb.append("KEY fk_");
+		sb.append("  constraint ");
+		sb.append("fk_");
 		sb.append(classe.toLowerCase());
 		sb.append("_");
 		sb.append(references.toLowerCase());
-		sb.append(" (");
+		sb.append(" foreign key (");
 		sb.append(fieldName);
-		sb.append("),\r\n");
+		sb.append(") references ");
+		sb.append(references);
+		sb.append(" (id) on update restrict on delete restrict,\r\n ");
 		return sb.toString();
 	}
 

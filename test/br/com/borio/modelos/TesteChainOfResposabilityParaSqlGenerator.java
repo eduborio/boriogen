@@ -2,6 +2,7 @@ package br.com.borio.modelos;
 
 import java.lang.reflect.Field;
 
+import br.com.weblogia.modelos.CorrenteDeConstraintSql;
 import br.com.weblogia.modelos.CorrenteDeFieldSql;
 import br.com.weblogia.modelos.CorrenteDeIndexSql;
 
@@ -15,14 +16,21 @@ public class TesteChainOfResposabilityParaSqlGenerator {
         
         CorrenteDeFieldSql chain= null;
         CorrenteDeIndexSql indexChain= null;
+        CorrenteDeConstraintSql constraintChain= null;
         
         for(Field field: clazz.getDeclaredFields()) {
         	chain = new CorrenteDeFieldSql(field);
         	System.out.print(chain.addSqlField());
         }
+        
         for(Field field: clazz.getDeclaredFields()) {
         	indexChain = new CorrenteDeIndexSql(field);
         	System.out.print(indexChain.addSqlIndex());
+        }
+        
+        for(Field field: clazz.getDeclaredFields()) {
+        	constraintChain = new CorrenteDeConstraintSql(field);
+        	System.out.print(constraintChain.addConstraint());
         }
 		
 	}

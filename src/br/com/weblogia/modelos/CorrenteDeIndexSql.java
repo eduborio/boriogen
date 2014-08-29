@@ -6,6 +6,7 @@ public class CorrenteDeIndexSql {
 
 	SqlIndexBuilder semtipo;
 	SqlIndexBuilder primaryKey;
+	SqlIndexBuilder foreignKey;
 	
 	private Field field;
 
@@ -13,10 +14,11 @@ public class CorrenteDeIndexSql {
 		this.field = field;
 		semtipo    = new IndexNaoImplementado(null);
 		primaryKey = new CriaSqlIndexPrimario(semtipo);
+		foreignKey = new CriaSqlIndexParaForeignKey(primaryKey);
 	}
 
 	public String addSqlIndex() {
-		return primaryKey.criaIndexDeSql(field);
+		return foreignKey.criaIndexDeSql(field);
 	}
 	
 }
