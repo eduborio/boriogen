@@ -12,6 +12,7 @@ public class CorrenteDeTipos {
 	SqlFieldBuilder date;
 	SqlFieldBuilder nome;
 	SqlFieldBuilder doubles;
+	SqlFieldBuilder foreignKey;
 	
 	private Field field;
 
@@ -25,10 +26,11 @@ public class CorrenteDeTipos {
 		date = new CriaSqlFieldParaDate(longId);
 		nome = new CriaSqlFieldParaNomeOuDescricao(date);
 		doubles = new CriaSqlFieldParaDouble(nome);
+		foreignKey = new CriaSqlFieldParaForeignKey(doubles);
 	}
 
 	public String addSqlField() {
-		return doubles.criaCampoDeSql(field);
+		return foreignKey.criaCampoDeSql(field);
 	}
 	
 }

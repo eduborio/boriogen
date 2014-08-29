@@ -2,6 +2,8 @@ package br.com.weblogia.modelos;
 
 import java.util.Date;
 
+import javax.persistence.ManyToOne;
+
 public class Produto {
 	
 	private Long id;
@@ -15,6 +17,8 @@ public class Produto {
 	private double euSoudoublePrimitivo;
 	private Long  euSouLong;
 	private long  euSouLongPrimitivo;
+	@ManyToOne
+	private Cliente cliente;
 	
 	public Long getId() {
 		return id;
