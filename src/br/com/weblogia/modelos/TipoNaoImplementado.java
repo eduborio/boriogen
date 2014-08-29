@@ -14,12 +14,10 @@ public class TipoNaoImplementado extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiCampoDeSql(String nomeDoCampo) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(" Nao há implementacao para o Tipo: ");
-		sb.append(field.getType().getSimpleName());
-		sb.append(" ");
-		sb.append(field.getName());
+		sb.append(" Nao há implementacao para o campo: ");
+		sb.append(nomeDoCampo);
 		sb.append(",\r\n");
 		return sb.toString();
 	}

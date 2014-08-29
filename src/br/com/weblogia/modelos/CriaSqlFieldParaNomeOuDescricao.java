@@ -18,10 +18,10 @@ public class CriaSqlFieldParaNomeOuDescricao extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiCampoDeSql(String nomeDoCampo) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  ");
-		sb.append(field.getName());
+		sb.append(nomeDoCampo);
 		sb.append(" ");
 		sb.append("VARCHAR(65) NOT NULL,\r\n");
 		return sb.toString();

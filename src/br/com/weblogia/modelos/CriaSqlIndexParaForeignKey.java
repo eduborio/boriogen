@@ -4,9 +4,9 @@ import java.lang.reflect.Field;
 
 import javax.persistence.ManyToOne;
 
-public class CriaSqlFieldParaForeignKey extends TemplateDeFields{
+public class CriaSqlIndexParaForeignKey extends TemplateDeIndex{
 
-	public CriaSqlFieldParaForeignKey(SqlFieldBuilder builder) {
+	public CriaSqlIndexParaForeignKey(SqlIndexBuilder builder) {
 		super(builder);
 	}
 
@@ -20,10 +20,10 @@ public class CriaSqlFieldParaForeignKey extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(String nomeDoCampo) {
+	public String costroiIndiceDeSql(Field field) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  ");
-		sb.append(nomeDoCampo+"_id");
+		sb.append(field.getName()+"_id");
 		sb.append(" ");
 		sb.append("INT(10) UNSIGNED DEFAULT NULL,\r\n");
 		return sb.toString();

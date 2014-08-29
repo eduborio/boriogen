@@ -18,10 +18,10 @@ public class CriaSqlFieldParaInteger extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiCampoDeSql(String nomeDoCampo) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  ");
-		sb.append(field.getName());
+		sb.append(nomeDoCampo);
 		sb.append(" ");
 		sb.append("INT(10) UNSIGNED DEFAULT 0,\r\n");
 		return sb.toString();

@@ -18,7 +18,7 @@ public class CriaSqlFieldParaEndereco extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiCampoDeSql(String nomeDocampo) {
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(logradouro());

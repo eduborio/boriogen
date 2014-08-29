@@ -17,10 +17,10 @@ public class CriaSqlFieldParaBoolean extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiCampoDeSql(String fieldName) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("  ");
-		sb.append(field.getName());
+		sb.append(fieldName);
 		sb.append(" ");
 		sb.append("TINYINT(1) UNSIGNED DEFAULT \'0\',\r\n");
 		return sb.toString();
