@@ -15,7 +15,7 @@ public class ConstraintNaoImplementado extends TemplateDeConstraint{
 
 	@Override
 	public String costroiConstraintDeSql(Field field) {
-		return "";
+		return null;
 	}
 
 }

@@ -15,7 +15,7 @@ public class IndexNaoImplementado extends TemplateDeIndex{
 
 	@Override
 	public String costroiIndiceDeSql(Field field) {
-		return "";
+		return null;
 	}
 
 }

@@ -4,7 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Table(name="produtos")
 public class Produto {
 	
 	private Long id;

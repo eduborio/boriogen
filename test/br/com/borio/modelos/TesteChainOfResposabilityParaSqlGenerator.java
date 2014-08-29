@@ -11,7 +11,7 @@ public class TesteChainOfResposabilityParaSqlGenerator {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		
 		ClassLoader cl = ClassLoader.getSystemClassLoader();
-        String nomeDaClasse = "br.com.weblogia.modelos.Produto";
+        String nomeDaClasse = "br.com.weblogia.domain.Produto";
         Class<?> clazz = cl.loadClass(nomeDaClasse);
         
         CorrenteDeFieldSql chain= null;
