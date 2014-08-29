@@ -17,6 +17,7 @@ public class CreateSql {
     private CorrenteDeIndexSql indexChain;
     private CorrenteDeConstraintSql constraintChain;
     private List<String> linhas = new ArrayList<String>();
+    private Class<?> classe;
      
     public CreateSql(String className) {
 		this.className = className;
@@ -28,6 +29,7 @@ public class CreateSql {
         	String linha = null;
         	
 			Class<?> classe = cl.loadClass(className);
+			this.classe = classe; 
 			
 			String nomeDaTabela = classe.getSimpleName().toLowerCase();
 			
@@ -61,10 +63,6 @@ public class CreateSql {
 	        linhas.set(linhas.size()-1,tiraUltimaVirgula());
 	        linhas.add(")ENGINE=InnoDB CHARSET=latin1;");
 	        
-	        for(String str:linhas) {
-	        	System.out.print(str);
-	        }
-			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -73,7 +71,13 @@ public class CreateSql {
     private String tiraUltimaVirgula() {
     	return linhas.get(linhas.size()-1).replace(",","");
     }
+
+	public List<String> getLinhas() {
+		return linhas;
+	}
 	
-	
+	public Class<?> getClasse() {
+		return this.classe;
+	}
 
 }
