@@ -2,7 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaInteger extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaInteger extends TemplateDeFields{
 
 	public CriaSqlFieldParaInteger(SqlFieldBuilder builder) {
 		super(builder);

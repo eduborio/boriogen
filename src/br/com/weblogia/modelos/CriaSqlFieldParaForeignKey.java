@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 
 import javax.persistence.ManyToOne;
 
-public class CriaSqlFieldParaForeignKey extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaForeignKey extends TemplateDeFields{
 
 	public CriaSqlFieldParaForeignKey(SqlFieldBuilder builder) {
 		super(builder);

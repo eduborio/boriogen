@@ -2,11 +2,11 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public abstract class TemplateDeTiposDeCampos implements SqlFieldBuilder {
+public abstract class TemplateDeFields implements SqlFieldBuilder {
 	
 	private final SqlFieldBuilder proximo;
 
-	public TemplateDeTiposDeCampos(SqlFieldBuilder builder) {
+	public TemplateDeFields(SqlFieldBuilder builder) {
 		this.proximo = builder;
 	}
 

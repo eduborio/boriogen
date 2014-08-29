@@ -3,7 +3,7 @@ package br.com.weblogia.modelos;
 import java.lang.reflect.Field;
 import java.util.Date;
 
-public class CriaSqlFieldParaDate extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaDate extends TemplateDeFields{
 
 	public CriaSqlFieldParaDate(SqlFieldBuilder builder) {
 		super(builder);

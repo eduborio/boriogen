@@ -4,5 +4,4 @@ import java.lang.reflect.Field;
 
 public interface SqlFieldBuilder {
 	String criaCampoDeSql(Field field);
-
 }

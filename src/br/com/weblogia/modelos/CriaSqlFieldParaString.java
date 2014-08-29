@@ -2,7 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaString extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaString extends TemplateDeFields{
 
 	public CriaSqlFieldParaString(SqlFieldBuilder builder) {
 		super(builder);
@@ -25,5 +25,4 @@ public class CriaSqlFieldParaString extends TemplateDeTiposDeCampos{
 		sb.append("VARCHAR(45) DEFAULT NULL,\r\n");
 		return sb.toString();
 	}
-
 }

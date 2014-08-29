@@ -2,7 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class TipoNaoImplementado extends TemplateDeTiposDeCampos{
+public class TipoNaoImplementado extends TemplateDeFields{
 
 	public TipoNaoImplementado(SqlFieldBuilder builder) {
 		super(builder);
@@ -23,5 +23,4 @@ public class TipoNaoImplementado extends TemplateDeTiposDeCampos{
 		sb.append(",\r\n");
 		return sb.toString();
 	}
-
 }

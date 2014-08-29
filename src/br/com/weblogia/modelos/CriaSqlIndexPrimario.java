@@ -2,9 +2,9 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaLongId extends TemplateDeFields{
+public class CriaSqlIndexPrimario extends TemplateDeFields{
 
-	public CriaSqlFieldParaLongId(SqlFieldBuilder builder) {
+	public CriaSqlIndexPrimario(SqlFieldBuilder builder) {
 		super(builder);
 	}
 
@@ -18,12 +18,7 @@ public class CriaSqlFieldParaLongId extends TemplateDeFields{
 
 	@Override
 	public String costroiCampoDeSql(Field field) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("  ");
-		sb.append(field.getName());
-		sb.append(" ");
-		sb.append("INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n");
-		return sb.toString();
+		return "  primary key (id),\r\n";
 	}
 
 }

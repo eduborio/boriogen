@@ -2,7 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CorrenteDeTipos {
+public class CorrenteDeFieldSql {
 
 	SqlFieldBuilder semtipo;
 	SqlFieldBuilder string;
@@ -17,7 +17,7 @@ public class CorrenteDeTipos {
 	
 	private Field field;
 
-	public CorrenteDeTipos(Field field) {
+	public CorrenteDeFieldSql(Field field) {
 		this.field = field;
 		semtipo  = new TipoNaoImplementado(null);
 		string   = new CriaSqlFieldParaInteger(semtipo);

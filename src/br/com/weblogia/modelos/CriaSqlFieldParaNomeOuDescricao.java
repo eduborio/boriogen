@@ -2,7 +2,7 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlFieldParaNomeOuDescricao extends TemplateDeTiposDeCampos{
+public class CriaSqlFieldParaNomeOuDescricao extends TemplateDeFields{
 
 	public CriaSqlFieldParaNomeOuDescricao(SqlFieldBuilder builder) {
 		super(builder);
