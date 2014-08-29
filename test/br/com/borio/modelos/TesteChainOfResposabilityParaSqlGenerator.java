@@ -2,9 +2,9 @@ package br.com.borio.modelos;
 
 import java.lang.reflect.Field;
 
-import br.com.weblogia.modelos.CorrenteDeConstraintSql;
-import br.com.weblogia.modelos.CorrenteDeFieldSql;
-import br.com.weblogia.modelos.CorrenteDeIndexSql;
+import br.com.weblogia.domain.sql.constraints.CorrenteDeConstraintSql;
+import br.com.weblogia.domain.sql.fields.CorrenteDeFieldSql;
+import br.com.weblogia.domain.sql.index.CorrenteDeIndexSql;
 
 public class TesteChainOfResposabilityParaSqlGenerator {
 	
