@@ -2,9 +2,9 @@ package br.com.weblogia.modelos;
 
 import java.lang.reflect.Field;
 
-public class CriaSqlIndexPrimario extends TemplateDeFields{
+public class CriaSqlIndexPrimario extends TemplateDeIndex{
 
-	public CriaSqlIndexPrimario(SqlFieldBuilder builder) {
+	public CriaSqlIndexPrimario(SqlIndexBuilder builder) {
 		super(builder);
 	}
 
@@ -17,7 +17,7 @@ public class CriaSqlIndexPrimario extends TemplateDeFields{
 	}
 
 	@Override
-	public String costroiCampoDeSql(Field field) {
+	public String costroiIndiceDeSql(Field field) {
 		return "  primary key (id),\r\n";
 	}
 

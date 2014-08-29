@@ -3,6 +3,7 @@ package br.com.borio.modelos;
 import java.lang.reflect.Field;
 
 import br.com.weblogia.modelos.CorrenteDeFieldSql;
+import br.com.weblogia.modelos.CorrenteDeIndexSql;
 
 public class TesteChainOfResposabilityParaSqlGenerator {
 	
@@ -13,10 +14,15 @@ public class TesteChainOfResposabilityParaSqlGenerator {
         Class<?> clazz = cl.loadClass(nomeDaClasse);
         
         CorrenteDeFieldSql chain= null;
+        CorrenteDeIndexSql indexChain= null;
         
         for(Field field: clazz.getDeclaredFields()) {
         	chain = new CorrenteDeFieldSql(field);
         	System.out.print(chain.addSqlField());
+        }
+        for(Field field: clazz.getDeclaredFields()) {
+        	indexChain = new CorrenteDeIndexSql(field);
+        	System.out.print(indexChain.addSqlIndex());
         }
 		
 	}
