@@ -20,6 +20,8 @@ public class Produto {
 	@ManyToOne
 	private Cliente cliente;
 	
+	private Endereco endereco;
+	
 	public Long getId() {
 		return id;
 	}
@@ -85,6 +87,12 @@ public class Produto {
 	}
 	public void setEuSouLongPrimitivo(long euSouLongPrimitivo) {
 		this.euSouLongPrimitivo = euSouLongPrimitivo;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 	

@@ -20,6 +20,7 @@ public class TipoNaoImplementado extends TemplateDeTiposDeCampos{
 		sb.append(field.getType().getSimpleName());
 		sb.append(" ");
 		sb.append(field.getName());
+		sb.append(",\r\n");
 		return sb.toString();
 	}
 

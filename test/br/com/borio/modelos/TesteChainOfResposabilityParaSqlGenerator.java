@@ -19,8 +19,6 @@ public class TesteChainOfResposabilityParaSqlGenerator {
         	System.out.print(chain.addSqlField());
         }
 		
-		
-		
 	}
 
 }
