@@ -45,8 +45,8 @@ public class TesteSqlCreate {
 			novoArquivo = new File(mainDir.getCanonicalPath()+"\\"+"WebContent\\sqls\\"+fmt.format(new Date())+"_"+getVersionFromLastFile(files.get(files.size()-1)) +"_Cria"+createSql.getClasse().getSimpleName()+".sql");
 		}
 		
-		System.out.println(files.get(files.size()-1));
-		System.out.println(getVersionFromLastFile(files.get(files.size()-1)));
+		//System.out.println(files.get(files.size()-1));
+		//System.out.println(getVersionFromLastFile(files.get(files.size()-1)));
 		
 		PrintWriter writer = new PrintWriter(novoArquivo);
 		for(String linha: createSql.getLinhas()) {
