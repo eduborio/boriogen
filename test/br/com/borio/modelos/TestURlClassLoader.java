@@ -10,7 +10,7 @@ public class TestURlClassLoader {
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		File file = new File("C:\\Borius\\vendas\\lite\\src\\main\\webapp\\WEB-INF\\classes");
+		File file = new File("C:\\Borius\\vendas\\vendas\\build\\classes");
 
 		try {
 		    // Convert File to a URL
@@ -23,7 +23,7 @@ public class TestURlClassLoader {
 
 		    // Load in the class; MyClass.class should be located in
 		    // the directory file:/c:/myclasses/com/mycompany
-		    Class<?> cls = cl.loadClass("br.com.weblogia.domain.Produto");
+		    Class<?> cls = cl.loadClass("br.com.vendas.domain.Produto");
 		    for(Field field: cls.getDeclaredFields()) {
 		    	System.out.println(field.getName());
 		    }
