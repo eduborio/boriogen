@@ -24,15 +24,15 @@ public class CriaJspFieldParaBoolean extends TemplateDeFieldsJsp{
 		String fieldCompleto = field.getDeclaringClass().getSimpleName().toLowerCase()+"."+field.getName();
       
 		StringBuilder sb = new StringBuilder();
-		sb.append("								<div class=\"form-group\">");
-		sb.append("									<label class=\"col-md-2\">"+ StringUtils.capitaliza(field.getName())+"</label>");
-		sb.append(" 								<div class=\"col-md-2\">");
-		sb.append(" 									<select name=\""+fieldCompleto+"\" value=\"${"+fieldCompleto+"}\" class=\"form-control\"/>");
-		sb.append(" 										<option value=\"false\" <c:if test=\"${"+fieldCompleto+" == false}\">selected=\"selected\"</c:if>>Não</option>");
-		sb.append(" 										<option value=\"true\" <c:if test=\"${"+fieldCompleto+" == true}\">selected=\"selected\"</c:if>>Sim</option>");
-		sb.append(" 									</select>");
-		sb.append("									</div>");
-		sb.append("								</div>");
+		sb.append("								<div class=\"form-group\">\r\n");
+		sb.append("									<label class=\"col-md-2\">"+ StringUtils.capitaliza(field.getName())+"</label>\r\n");
+		sb.append("									<div class=\"col-md-2\">\r\n");
+		sb.append("										<select name=\""+fieldCompleto+"\" value=\"${"+fieldCompleto+"}\" class=\"form-control\"/>\r\n");
+		sb.append("											<option value=\"false\" <c:if test=\"${"+fieldCompleto+" == false}\">selected=\"selected\"</c:if>>Não</option>\r\n");
+		sb.append("											<option value=\"true\" <c:if test=\"${"+fieldCompleto+" == true}\">selected=\"selected\"</c:if>>Sim</option>\r\n");
+		sb.append("										</select>\r\n");
+		sb.append("									</div>\r\n");
+		sb.append("								</div>\r\n");
 		return sb.toString();
 	}
 	

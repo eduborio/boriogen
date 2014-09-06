@@ -21,7 +21,7 @@ public class CriaJspFieldParaLongId extends TemplateDeFieldsJsp{
 		String fieldCompleto = field.getDeclaringClass().getSimpleName().toLowerCase()+"."+field.getName();
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append(" 							<input type=\"hidden\" name=\""+fieldCompleto+"\" value=\"${"+fieldCompleto+"}\" />");
+		sb.append(" 							<input type=\"hidden\" name=\""+fieldCompleto+"\" value=\"${"+fieldCompleto+"}\" />\r\n");
 		return sb.toString();
 	}
 

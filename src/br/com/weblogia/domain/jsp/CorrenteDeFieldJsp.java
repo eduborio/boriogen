@@ -20,6 +20,10 @@ public class CorrenteDeFieldJsp {
 	public CorrenteDeFieldJsp(Field field) {
 		this.field = field;
 		semtipo  = new FieldNaoImplementadoJsp(null);
+		string   = new CriaJspFieldParaString(semtipo);
+		booleano = new CriaJspFieldParaBoolean(string);
+		longId   = new CriaJspFieldParaLongId(booleano);
+		endereco = new CriaJspFieldParaEndereco(longId);
 		//string   = new CriaSqlFieldParaInteger(semtipo);
 		//booleano = new CriaSqlFieldParaBoolean(string);
 		//integer = new CriaSqlFieldParaString(booleano);

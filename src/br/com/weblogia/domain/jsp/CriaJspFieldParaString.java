@@ -24,12 +24,12 @@ public class CriaJspFieldParaString extends TemplateDeFieldsJsp{
 		String fieldCompleto = field.getDeclaringClass().getSimpleName().toLowerCase()+"."+field.getName();
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("								<div class=\"form-group\">");
-		sb.append("									<label class=\"col-md-2\">"+ StringUtils.capitaliza(field.getName())+"</label>");
-		sb.append(" 								<div class=\"col-md-7\">");
-		sb.append(" 									<input type=\"text\" name=\""+fieldCompleto+"."+field.getName()+"\" value=\"${"+fieldCompleto+"}\" class=\"form-control\"/>");
-		sb.append("									</div>");
-		sb.append("								</div>");
+		sb.append("								<div class=\"form-group\">\r\n");
+		sb.append("									<label class=\"col-md-2\">"+ StringUtils.capitaliza(field.getName())+"</label>\r\n");
+		sb.append("									<div class=\"col-md-7\">\r\n");
+		sb.append("										<input type=\"text\" name=\""+fieldCompleto+"\" value=\"${"+fieldCompleto+"}\" class=\"form-control\"/>\r\n");
+		sb.append("									</div>\r\n");
+		sb.append("								</div>\r\n");
 		return sb.toString();
 	}
 }
