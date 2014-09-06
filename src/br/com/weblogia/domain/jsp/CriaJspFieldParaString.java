@@ -21,11 +21,13 @@ public class CriaJspFieldParaString extends TemplateDeFieldsJsp{
 	@Override
 	public String costroiCampoDeJsp(Field field) {
 		
+		String fieldCompleto = field.getDeclaringClass().getSimpleName().toLowerCase()+"."+field.getName();
+		
 		StringBuilder sb = new StringBuilder();
 		sb.append("								<div class=\"form-group\">");
 		sb.append("									<label class=\"col-md-2\">"+ StringUtils.capitaliza(field.getName())+"</label>");
 		sb.append(" 								<div class=\"col-md-7\">");
-		sb.append(" 									<input type=\"text\" name=\""+field.getDeclaringClass().getSimpleName().toLowerCase()+"."+field.getName()+"\" value=\"${cliente.nome}\" class=\"form-control\"/>");
+		sb.append(" 									<input type=\"text\" name=\""+fieldCompleto+"."+field.getName()+"\" value=\"${"+fieldCompleto+"}\" class=\"form-control\"/>");
 		sb.append("									</div>");
 		sb.append("								</div>");
 		return sb.toString();
