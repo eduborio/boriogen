@@ -23,7 +23,7 @@ public class CriaSqlFieldParaInteger extends TemplateDeFields{
 		sb.append("  ");
 		sb.append(nomeDoCampo);
 		sb.append(" ");
-		sb.append("INT(10) UNSIGNED DEFAULT 0,\r\n");
+		sb.append("INT UNSIGNED DEFAULT 0,\r\n");
 		return sb.toString();
 	}
 

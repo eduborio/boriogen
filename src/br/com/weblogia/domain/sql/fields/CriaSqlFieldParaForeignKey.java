@@ -25,7 +25,7 @@ public class CriaSqlFieldParaForeignKey extends TemplateDeFields{
 		sb.append("  ");
 		sb.append(nomeDoCampo+"_id");
 		sb.append(" ");
-		sb.append("INT(10) UNSIGNED DEFAULT NULL,\r\n");
+		sb.append("INT UNSIGNED DEFAULT NULL,\r\n");
 		return sb.toString();
 	}
 

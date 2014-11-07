@@ -12,9 +12,9 @@ import br.com.weblogia.domain.sql.index.CorrenteDeIndexSql;
 
 public class CreateSql {
 	
-	private CorrenteDeFieldSql chain = null;
-    private CorrenteDeIndexSql indexChain = null;
-    private CorrenteDeConstraintSql constraintChain = null;
+	private CorrenteDeFieldSql chain;
+    private CorrenteDeIndexSql indexChain;
+    private CorrenteDeConstraintSql constraintChain;
     private List<String> linhas = new ArrayList<String>();
     private Class<?> classe;
      

@@ -24,8 +24,6 @@ public class CriaSqlIndexParaForeignKey extends TemplateDeIndex{
 	@Override
 	public String costroiIndiceDeSql(Field field) {
 		
-		System.out.println(field);
-		
 		String fieldName = field.getName() + "_id";
 		if(field.isAnnotationPresent(JoinColumn.class)) 
 			fieldName = field.getAnnotation(JoinColumn.class).name();
