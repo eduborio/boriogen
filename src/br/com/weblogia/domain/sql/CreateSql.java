@@ -12,9 +12,9 @@ import br.com.weblogia.domain.sql.index.CorrenteDeIndexSql;
 
 public class CreateSql {
 	
-	private CorrenteDeFieldSql chain;
-    private CorrenteDeIndexSql indexChain;
-    private CorrenteDeConstraintSql constraintChain;
+	private CorrenteDeFieldSql chain = null;
+    private CorrenteDeIndexSql indexChain = null;
+    private CorrenteDeConstraintSql constraintChain = null;
     private List<String> linhas = new ArrayList<String>();
     private Class<?> classe;
      
@@ -31,6 +31,7 @@ public class CreateSql {
 				nomeDaTabela = classe.getAnnotation(Table.class).name();
 			
 			linhas.add("create table "+nomeDaTabela+"(\r\n");
+			
 			
 			for(Field field: classe.getDeclaredFields()) {
 	        	chain = new CorrenteDeFieldSql(field);

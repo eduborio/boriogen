@@ -32,7 +32,7 @@ public class CriaSqlConstraintParaForeignKey extends TemplateDeConstraint{
 		
 		String references = field.getType().getSimpleName().toLowerCase();
 		if(field.getType().isAnnotationPresent(Table.class))
-			references = field.getAnnotation(Table.class).name();
+			references = field.getType().getAnnotation(Table.class).name();
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("  constraint ");
