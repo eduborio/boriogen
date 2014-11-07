@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import br.com.weblogia.domain.Produto;
 import br.com.weblogia.domain.sql.CreateSql;
 
 public class TesteSqlCreate {
@@ -16,7 +17,7 @@ public class TesteSqlCreate {
 	public static void main(String[] args) throws IOException {
 		
 		
-		CreateSql createSql = new CreateSql("br.com.weblogia.domain.Produto");
+		CreateSql createSql = new CreateSql(Produto.class);
 		createSql.criaSqlCreateStatement();
 		
 		File mainDir = new File(".");

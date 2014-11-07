@@ -12,24 +12,18 @@ import br.com.weblogia.domain.sql.index.CorrenteDeIndexSql;
 
 public class CreateSql {
 	
-	private String className;
 	private CorrenteDeFieldSql chain;
     private CorrenteDeIndexSql indexChain;
     private CorrenteDeConstraintSql constraintChain;
     private List<String> linhas = new ArrayList<String>();
     private Class<?> classe;
      
-    public CreateSql(String className) {
-		this.className = className;
+    public CreateSql(Class<?> clazz) {
+		this.classe = clazz;
     }
     
     public void criaSqlCreateStatement() {
-    	ClassLoader cl = ClassLoader.getSystemClassLoader();
-        try {
         	String linha = null;
-        	
-			Class<?> classe = cl.loadClass(className);
-			this.classe = classe; 
 			
 			String nomeDaTabela = classe.getSimpleName().toLowerCase();
 			
@@ -37,7 +31,6 @@ public class CreateSql {
 				nomeDaTabela = classe.getAnnotation(Table.class).name();
 			
 			linhas.add("create table "+nomeDaTabela+"(\r\n");
-				
 			
 			for(Field field: classe.getDeclaredFields()) {
 	        	chain = new CorrenteDeFieldSql(field);
@@ -62,10 +55,6 @@ public class CreateSql {
 	        
 	        linhas.set(linhas.size()-1,tiraUltimaVirgula());
 	        linhas.add(")ENGINE=InnoDB CHARSET=latin1;");
-	        
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
     }
     
     private String tiraUltimaVirgula() {
