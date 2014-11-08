@@ -8,7 +8,7 @@ public class TesteDAO {
 	public static void main(String[] args) {
 		
 		BorioClassLoader cl = new BorioClassLoader(); 
-		Class<?> classe = cl.carregaClasse("C:\\Borius\\vendas\\tkl\\src\\main\\webapp\\WEB-INF\\classes", "br.com.weblogia.tkl.domain.NotaFiscal");
+		Class<?> classe = cl.carregaClasse("C:\\Borius\\vendas\\tkl\\src\\main\\webapp\\WEB-INF\\classes", "br.com.weblogia.tkl.domain.Empresa");
 		
 		CreateDAO createDAO = new CreateDAO(classe);
 		createDAO.criaInterfaceRepositorio();

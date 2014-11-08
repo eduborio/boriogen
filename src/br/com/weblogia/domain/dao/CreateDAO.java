@@ -56,7 +56,7 @@ public class CreateDAO {
 			
 		linhasDAO.add("public class "+classe.getSimpleName()+"DAO extends DAO<"+classe.getSimpleName()+"> implements "+ classe.getSimpleName()+"Repositorio{\r\n");
 		linhasDAO.add("\r\n");
-		linhasDAO.add("    public "+classe.getSimpleName()+"DAO()\r\n");
+		linhasDAO.add("    public "+classe.getSimpleName()+"DAO(){\r\n");
 		linhasDAO.add("        super("+classe.getSimpleName()+".class);\r\n");
 		linhasDAO.add("    }\r\n");
 		linhasDAO.add("\r\n");
