@@ -10,13 +10,8 @@ public class CreateDAO {
 	private List<String> linhasDAO= new ArrayList<String>();
 	private Class<?> classe;
 	
-	public CreateDAO(String className) {
-		ClassLoader cl = ClassLoader.getSystemClassLoader();
-		try {
-			classe = cl.loadClass(className);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+	public CreateDAO(Class<?> classe) {
+		this.classe = classe;
 	}
 	
 	public void criaInterfaceRepositorio() {
@@ -27,7 +22,7 @@ public class CreateDAO {
 		linhasRepositorio.add("import "+classe.getPackage().getName()+"."+classe.getSimpleName() +";\r\n");
 			
 		linhasRepositorio.add("public interface "+classe.getSimpleName()+"Repositorio{\r\n");
-		linhasRepositorio.add("    Long buscaPorId(Long id);\r\n");
+		linhasRepositorio.add("    "+classe.getSimpleName()+" buscaPorId(Long id);\r\n");
 		linhasRepositorio.add("    List<"+classe.getSimpleName()+"> buscaTodos(int pagina);\r\n");
 		linhasRepositorio.add("    List<"+classe.getSimpleName()+"> buscaTodos();\r\n");
 		linhasRepositorio.add("    Long buscaTotalDeRegistrosDaLista();\r\n");
@@ -90,7 +85,6 @@ public class CreateDAO {
 				linhasDAO.add("\r\n");
 				linhasDAO.add("        return query.getResultList();\r\n");
 				linhasDAO.add("    }\r\n");
-				
 			}
 			
 			if(field.getName().equals("descricao")) {
@@ -114,9 +108,7 @@ public class CreateDAO {
 				linhasDAO.add("\r\n");
 				linhasDAO.add("        return query.getResultList();\r\n");
 				linhasDAO.add("    }\r\n");
-				
 			}
-				
 		}
 		linhasDAO.add("}\r\n");
 	}
@@ -134,13 +126,19 @@ public class CreateDAO {
 	}
 	
 	private String montaPackage(String packageDaClasseDeDominio) {
+		int totalPontos = 0;
+		for(char c : packageDaClasseDeDominio.toCharArray()) {
+			if(c == '.') {
+				totalPontos++;
+			}
+		}
 		
 		int pontos = 0;
 		int index = 0;
 		
 		for(char c : packageDaClasseDeDominio.toCharArray()) {
 			
-			if(pontos == 3)
+			if(pontos == totalPontos)
 				break;
 			
 			if(c == '.') {

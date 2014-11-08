@@ -12,12 +12,11 @@ public class TesteJspCreator {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		
-		File file = new File("C:\\Borius\\vendas\\vendas\\build\\classes");
+		File file = new File("C:\\Borius\\vendas\\tkl\\src\\main\\webapp\\WEB-INF\\classes");
 
 		try {
 		    // Convert File to a URL
-		    @SuppressWarnings("deprecation")
-			URL url = file.toURL();          // file:/c:/myclasses/
+			URL url = file.toURI().toURL();          // file:/c:/myclasses/
 		    URL[] urls = new URL[]{url};
 
 		    // Create a new class loader with the directory
@@ -25,7 +24,7 @@ public class TesteJspCreator {
 
 		    // Load in the class; MyClass.class should be located in
 		    // the directory file:/c:/myclasses/com/mycompany
-		    Class<?> cls = cl.loadClass("br.com.vendas.domain.Produto");
+		    Class<?> cls = cl.loadClass("br.com.weblogia.tkl.domain.NotaFiscal");
 		    
 		    CreateNovoJsp jsp = new CreateNovoJsp(cls);
 		    jsp.criaJspNovo();

@@ -1,12 +1,16 @@
 package br.com.borio.modelos;
 
 import br.com.weblogia.domain.dao.CreateDAO;
+import br.com.weblogia.domain.utils.BorioClassLoader;
 
 public class TesteDAO {
 	
 	public static void main(String[] args) {
 		
-		CreateDAO createDAO = new CreateDAO("br.com.weblogia.domain.Produto");
+		BorioClassLoader cl = new BorioClassLoader(); 
+		Class<?> classe = cl.carregaClasse("C:\\Borius\\vendas\\tkl\\src\\main\\webapp\\WEB-INF\\classes", "br.com.weblogia.tkl.domain.NotaFiscal");
+		
+		CreateDAO createDAO = new CreateDAO(classe);
 		createDAO.criaInterfaceRepositorio();
 		createDAO.criaClasseDAO();
 		
