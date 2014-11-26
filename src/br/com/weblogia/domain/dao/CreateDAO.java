@@ -151,4 +151,10 @@ public class CreateDAO {
 		
 	}
 	
+	public String montaDiretoriosDaClasse(String packageDaClasse){
+		String result = montaPackage(packageDaClasse);
+		result = result.replace("package ","");
+		return result.replace(".","\\");
+	}
+	
 }

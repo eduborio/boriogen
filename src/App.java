@@ -6,6 +6,7 @@ import java.net.URLClassLoader;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
 
+import br.com.weblogia.domain.dao.CriaDAONoSistemaDeArquivos;
 import br.com.weblogia.domain.sql.CriaSqlNoSistemaDeArquivos;
 import br.com.weblogia.domain.utils.PathFinder;
 import static java.nio.file.FileVisitResult.*;
@@ -69,7 +70,7 @@ public class App {
     }
 
     static void usage() {
-        System.err.println("app create all|sql|dao|repositorio|jsp-list|jsp-novo <NomeDaClasse>");
+        System.err.println("app create all|sql|dao|repositorio|controller|jsp-list|jsp-novo <NomeDaClasse>");
         System.err.println("voce deve estar no diretorio raiz do seu projeto");
         System.exit(-1);
     }
@@ -85,7 +86,7 @@ public class App {
     		isMaven = true;
     	}
     	
-    	String comandosPermitidos = "|all|sql|dao|repositorio|jsp-list|jsp-novo|";
+    	String comandosPermitidos = "|all|sql|dao|repositorio|controller|jsp-list|jsp-novo|";
         if (args.length < 3 || !args[0].equals("create") || !comandosPermitidos.contains(args[1])|| args[2] == null)
             usage();
 
@@ -104,6 +105,11 @@ public class App {
         	
         	if(args[1].equals("sql") || args[1].equals("all")){
         		CriaSqlNoSistemaDeArquivos creator = new CriaSqlNoSistemaDeArquivos();
+        		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
+        	}
+        	
+        	if(args[1].equals("dao") || args[1].equals("all")){
+        		CriaDAONoSistemaDeArquivos creator = new CriaDAONoSistemaDeArquivos();
         		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
         	}
         }

@@ -8,7 +8,7 @@ public class TesteDAO {
 	public static void main(String[] args) {
 		
 		BorioClassLoader cl = new BorioClassLoader(); 
-		Class<?> classe = cl.carregaClasse("C:\\Borius\\vendas\\tkl\\src\\main\\webapp\\WEB-INF\\classes", "br.com.weblogia.tkl.domain.Empresa");
+		Class<?> classe = cl.carregaClasse("C:\\Borius\\vendas\\vendas\\build\\classes", "br.com.vendas.domain.NFeComplementar");
 		
 		CreateDAO createDAO = new CreateDAO(classe);
 		createDAO.criaInterfaceRepositorio();
@@ -22,6 +22,7 @@ public class TesteDAO {
 			System.out.print(linha);
 		}
 		
+		System.out.println(createDAO.montaDiretoriosDaClasse(classe.getPackage().toString()));
 	}
 
 }
