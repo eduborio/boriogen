@@ -114,6 +114,11 @@ public class App {
         		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
         	}
         	
+        	if(args[1].equals("jsp-novo") || args[1].equals("all")){
+        		CriaNovoJspNoSistemaDeArquivos creator = new CriaNovoJspNoSistemaDeArquivos();
+        		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
+        	}
+        	
         }
     }
 
