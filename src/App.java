@@ -157,6 +157,8 @@ public class App {
 		File mainDir = new File(".");
 		File classpath = new File(mainDir.getCanonicalPath()+"\\.classpath");
 		
+		System.out.println(mainDir.getCanonicalPath());
+		
 		if(!classpath.exists()) {
 			System.out.println("Vc nao esta no raiz do seu projeto!!!");
 			System.exit(-1);
