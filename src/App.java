@@ -7,6 +7,8 @@ import java.nio.file.*;
 import java.nio.file.attribute.*;
 
 import br.com.weblogia.domain.dao.CriaDAONoSistemaDeArquivos;
+import br.com.weblogia.domain.jsp.CreateNovoJsp;
+import br.com.weblogia.domain.jsp.CriaNovoJspNoSistemaDeArquivos;
 import br.com.weblogia.domain.sql.CriaSqlNoSistemaDeArquivos;
 import br.com.weblogia.domain.utils.PathFinder;
 import static java.nio.file.FileVisitResult.*;
@@ -75,8 +77,7 @@ public class App {
         System.exit(-1);
     }
 
-    public static void main(String[] args)
-        throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
     	
     	boolean isMaven = false;
     	
@@ -112,6 +113,7 @@ public class App {
         		CriaDAONoSistemaDeArquivos creator = new CriaDAONoSistemaDeArquivos();
         		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
         	}
+        	
         }
     }
 

@@ -19,24 +19,19 @@ public class CorrenteDeFieldJsp {
 
 	public CorrenteDeFieldJsp(Field field) {
 		this.field = field;
-		semtipo  = new FieldNaoImplementadoJsp(null);
-		string   = new CriaJspFieldParaString(semtipo);
-		booleano = new CriaJspFieldParaBoolean(string);
-		longId   = new CriaJspFieldParaLongId(booleano);
-		endereco = new CriaJspFieldParaEndereco(longId);
-		//string   = new CriaSqlFieldParaInteger(semtipo);
-		//booleano = new CriaSqlFieldParaBoolean(string);
-		//integer = new CriaSqlFieldParaString(booleano);
-		//longId = new CriaSqlFieldParaLongId(integer);
-		//date = new CriaSqlFieldParaDate(longId);
-		//nome = new CriaSqlFieldParaNomeOuDescricao(date);
-		//doubles = new CriaSqlFieldParaDouble(nome);
-		//foreignKey = new CriaSqlFieldParaForeignKey(doubles);
-		//endereco = new CriaSqlFieldParaEndereco(foreignKey);
+		semtipo    = new FieldNaoImplementadoJsp(null);
+		string     = new CriaJspFieldParaString(semtipo);
+		booleano   = new CriaJspFieldParaBoolean(string);
+		longId     = new CriaJspFieldParaLongId(booleano);
+		endereco   = new CriaJspFieldParaEndereco(longId);
+		integer    = new CriaJspFieldParaInteger(endereco);
+		date       = new CriaJspFieldParaDate(longId);
+		doubles    = new CriaJspFieldParaDouble(date);
+		foreignKey = new CriaJspFieldParaForeignKey(doubles);
 	}
 
 	public String addJspField() {
-		return endereco.criaCampoDeJsp(field);
+		return foreignKey.criaCampoDeJsp(field);
 	}
 	
 }
