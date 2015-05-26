@@ -23,7 +23,7 @@ public class CriaSqlFieldParaDate extends TemplateDeFields{
 		sb.append("  ");
 		sb.append(nomeDoCampo);
 		sb.append(" ");
-		sb.append(" DATETIME DEFAULT NULL,\r\n");
+		sb.append(" DATE DEFAULT NULL,\r\n");
 		return sb.toString();
 	}
 
