@@ -7,7 +7,6 @@ import java.nio.file.*;
 import java.nio.file.attribute.*;
 
 import br.com.weblogia.domain.dao.CriaDAONoSistemaDeArquivos;
-import br.com.weblogia.domain.jsp.CreateNovoJsp;
 import br.com.weblogia.domain.jsp.CriaNovoJspNoSistemaDeArquivos;
 import br.com.weblogia.domain.sql.CriaSqlNoSistemaDeArquivos;
 import br.com.weblogia.domain.utils.PathFinder;
@@ -117,6 +116,16 @@ public class App {
         	if(args[1].equals("jsp-novo") || args[1].equals("all")){
         		CriaNovoJspNoSistemaDeArquivos creator = new CriaNovoJspNoSistemaDeArquivos();
         		creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
+        	}
+        	
+        	if(args[1].equals("jsp-list") || args[1].equals("all")){
+        		//CriaNovoJspNoSistemaDeArquivos creator = new CriaNovoJspNoSistemaDeArquivos();
+        		//creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
+        	}
+        	
+        	if(args[1].equals("controller") || args[1].equals("all")){
+        		//CriaNovoJspNoSistemaDeArquivos creator = new CriaNovoJspNoSistemaDeArquivos();
+        		//creator.criaArquivo(classe, pathFinder.getRootDoProjeto(), isMaven);
         	}
         	
         }

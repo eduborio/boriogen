@@ -69,7 +69,7 @@ public class CreateDAO {
 				
 				linhasDAO.add("    @Override\r\n");
 				linhasDAO.add("    public List<"+classe.getSimpleName()+"> busca"+classe.getSimpleName()+"PorNome(String nome) {\r\n");
-				linhasDAO.add("        StringBuilder hql = new StringBuilder()\r\n");
+				linhasDAO.add("        StringBuilder hql = new StringBuilder();\r\n");
 				linhasDAO.add("        hql.append(\" From "+ classe.getSimpleName() +" "+alias+" \"); \r\n");
 				linhasDAO.add("        hql.append(\" where "+alias+ ".nome like :nome \"); \r\n");
 				linhasDAO.add("        hql.append(\" and "+alias+".empresa = :empresa \");\r\n");

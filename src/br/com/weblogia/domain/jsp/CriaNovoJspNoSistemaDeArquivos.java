@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 public class CriaNovoJspNoSistemaDeArquivos {
 
 	public void criaArquivo(Class<?> classe, String rootDoProjeto,	boolean isMaven) throws IOException {
-		CreateNovoJsp createJsp = new CreateNovoJsp(classe);
+		CreateNovoJspModelo2 createJsp = new CreateNovoJspModelo2(classe);
 		createJsp.criaJspNovo();
 		
 		String caminhoDosSqls;

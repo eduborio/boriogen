@@ -1,11 +1,13 @@
 package br.com.weblogia.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Embeddable
-public class Endereco {
+public class Endereco implements Serializable {
 	
 	private String logradouro;
 	private String numero;
